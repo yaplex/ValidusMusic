@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.3.32901.215
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ValidusMusic.Api", "ValidusMusic.Api\ValidusMusic.Api.csproj", "{9A32BA38-9EBA-441D-80F0-C602C0F2942D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ValidusMusic.Core.ExternalContracts", "ValidusMusic.Core.ExternalContracts\ValidusMusic.Core.ExternalContracts.csproj", "{9F3F34CB-7445-40F5-AE2F-AE22B119540D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{9A32BA38-9EBA-441D-80F0-C602C0F2942D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9A32BA38-9EBA-441D-80F0-C602C0F2942D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9A32BA38-9EBA-441D-80F0-C602C0F2942D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9A32BA38-9EBA-441D-80F0-C602C0F2942D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9F3F34CB-7445-40F5-AE2F-AE22B119540D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9F3F34CB-7445-40F5-AE2F-AE22B119540D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9F3F34CB-7445-40F5-AE2F-AE22B119540D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9F3F34CB-7445-40F5-AE2F-AE22B119540D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {CB207384-D587-41C5-A434-7CAA7C279C36}
+	EndGlobalSection
+EndGlobal
