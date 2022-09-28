@@ -27,8 +27,4 @@
     <ProjectReference Include="..\ValidusMusic.DataProvider\ValidusMusic.DataProvider.csproj" />
   </ItemGroup>
 
-  <ItemGroup>
-    <Folder Include="AutoMapperProfiles\" />
-  </ItemGroup>
-
 </Project>

@@ -31,7 +31,7 @@ public class ArtistRepository: IArtistRepository
 
     public async Task<Artist?> GetById(long id)
     {
-        return await _dbContext.Artists.SingleOrDefaultAsync(x => x.Id == id);
+        return await _dbContext.Artists.Include(x => x.ArtistsAlbums).ThenInclude(x => x.Album).SingleOrDefaultAsync(x => x.Id == id);
     }
 
     public Task Delete(Artist artist)
