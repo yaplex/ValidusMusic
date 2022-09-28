@@ -15,28 +15,8 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllers();
 builder.Services.AddDbContext<ValidusMusicDbContext>(options =>
 {
-    // if (builder.Environment.IsDevelopment())
-    // {
-    //     options.UseInMemoryDatabase("ValidusMusic");
-    //
-    //     using (var ctx = new ValidusMusicDbContext(options.Options))
-    //     {
-    //         ctx.Database.EnsureCreatedAsync();
-    //     }
-    //     using (var ctx = new ValidusMusicDbContext(options.Options))
-    //     {
-    //         ctx.Database.EnsureCreatedAsync();
-    //     }
-    // }
-    // else
-    // {
-    // }
-
     options.UseSqlServer(builder.Configuration.GetConnectionString("ValidusMusicConnection"),
         b => b.MigrationsAssembly("ValidusMusic.DataProvider"));
-
-
-
 });
 
 

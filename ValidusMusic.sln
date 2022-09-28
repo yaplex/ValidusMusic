@@ -24,7 +24,9 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ValidusMusic.Core.Domain", 
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Web", "Web", "{07831E41-7264-406A-B0B0-46D51FF90C21}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ValidusMusic.UnitTests", "ValidusMusic.UnitTests\ValidusMusic.UnitTests.csproj", "{CA4F1554-7375-478F-A4A0-9EBFF582793A}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ValidusMusic.UnitTests", "ValidusMusic.UnitTests\ValidusMusic.UnitTests.csproj", "{CA4F1554-7375-478F-A4A0-9EBFF582793A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ValidusMusic.IntegrationTests", "ValidusMusic.IntegrationTests\ValidusMusic.IntegrationTests.csproj", "{D35B2CEC-175C-4492-BBF3-5F95E7BDBE8B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -52,6 +54,10 @@ Global
 		{CA4F1554-7375-478F-A4A0-9EBFF582793A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{CA4F1554-7375-478F-A4A0-9EBFF582793A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{CA4F1554-7375-478F-A4A0-9EBFF582793A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D35B2CEC-175C-4492-BBF3-5F95E7BDBE8B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D35B2CEC-175C-4492-BBF3-5F95E7BDBE8B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D35B2CEC-175C-4492-BBF3-5F95E7BDBE8B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D35B2CEC-175C-4492-BBF3-5F95E7BDBE8B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -62,6 +68,7 @@ Global
 		{27B97F3E-EED0-405A-852C-B0F50C840657} = {880ABBD5-21F1-44D5-AE07-AC4661993738}
 		{28060EC4-09E6-4F10-B0BF-A117DE0A5059} = {1C0B9CD5-0AB6-4A06-974A-DDAE17665881}
 		{CA4F1554-7375-478F-A4A0-9EBFF582793A} = {2ED3F46F-A4E5-4F3E-A8B2-06AAEFB33B30}
+		{D35B2CEC-175C-4492-BBF3-5F95E7BDBE8B} = {2ED3F46F-A4E5-4F3E-A8B2-06AAEFB33B30}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {CB207384-D587-41C5-A434-7CAA7C279C36}

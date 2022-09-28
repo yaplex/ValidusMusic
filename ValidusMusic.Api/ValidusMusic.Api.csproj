@@ -26,5 +26,7 @@
     <ProjectReference Include="..\ValidusMusic.Core.ExternalContracts\ValidusMusic.Core.ExternalContracts.csproj" />
     <ProjectReference Include="..\ValidusMusic.DataProvider\ValidusMusic.DataProvider.csproj" />
   </ItemGroup>
-
+	<ItemGroup>
+		<InternalsVisibleTo Include="ValidusMusic.IntegrationTests" />
+	</ItemGroup>
 </Project>
