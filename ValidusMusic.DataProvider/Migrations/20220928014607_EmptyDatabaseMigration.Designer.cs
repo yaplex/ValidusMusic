@@ -11,7 +11,7 @@ using ValidusMusic.DataProvider;
 namespace ValidusMusic.DataProvider.Migrations
 {
     [DbContext(typeof(ValidusMusicDbContext))]
-    [Migration("20220927235331_EmptyDatabaseMigration")]
+    [Migration("20220928014607_EmptyDatabaseMigration")]
     partial class EmptyDatabaseMigration
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
