@@ -5,7 +5,20 @@ VisualStudioVersion = 17.3.32901.215
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ValidusMusic.Api", "ValidusMusic.Api\ValidusMusic.Api.csproj", "{9A32BA38-9EBA-441D-80F0-C602C0F2942D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ValidusMusic.Core.ExternalContracts", "ValidusMusic.Core.ExternalContracts\ValidusMusic.Core.ExternalContracts.csproj", "{9F3F34CB-7445-40F5-AE2F-AE22B119540D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ValidusMusic.Core.ExternalContracts", "ValidusMusic.Core.ExternalContracts\ValidusMusic.Core.ExternalContracts.csproj", "{9F3F34CB-7445-40F5-AE2F-AE22B119540D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ValidusMusic.DataProvider", "ValidusMusic.DataProvider\ValidusMusic.DataProvider.csproj", "{27B97F3E-EED0-405A-852C-B0F50C840657}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Infrastructure", "Infrastructure", "{880ABBD5-21F1-44D5-AE07-AC4661993738}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Domain", "Domain", "{1C0B9CD5-0AB6-4A06-974A-DDAE17665881}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{2ED3F46F-A4E5-4F3E-A8B2-06AAEFB33B30}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{1DE01E65-CBF9-439D-A657-C2F39F72B4AF}"
+	ProjectSection(SolutionItems) = preProject
+		Readme.txt = Readme.txt
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -21,9 +34,18 @@ Global
 		{9F3F34CB-7445-40F5-AE2F-AE22B119540D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{9F3F34CB-7445-40F5-AE2F-AE22B119540D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{9F3F34CB-7445-40F5-AE2F-AE22B119540D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{27B97F3E-EED0-405A-852C-B0F50C840657}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{27B97F3E-EED0-405A-852C-B0F50C840657}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{27B97F3E-EED0-405A-852C-B0F50C840657}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{27B97F3E-EED0-405A-852C-B0F50C840657}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{9A32BA38-9EBA-441D-80F0-C602C0F2942D} = {880ABBD5-21F1-44D5-AE07-AC4661993738}
+		{9F3F34CB-7445-40F5-AE2F-AE22B119540D} = {1C0B9CD5-0AB6-4A06-974A-DDAE17665881}
+		{27B97F3E-EED0-405A-852C-B0F50C840657} = {880ABBD5-21F1-44D5-AE07-AC4661993738}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {CB207384-D587-41C5-A434-7CAA7C279C36}

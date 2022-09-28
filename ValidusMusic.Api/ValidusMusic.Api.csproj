@@ -7,11 +7,15 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="6.0.9" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.InMemory" Version="6.0.9" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="6.0.9" />
     <PackageReference Include="Swashbuckle.AspNetCore" Version="6.4.0" />
   </ItemGroup>
 
   <ItemGroup>
     <ProjectReference Include="..\ValidusMusic.Core.ExternalContracts\ValidusMusic.Core.ExternalContracts.csproj" />
+    <ProjectReference Include="..\ValidusMusic.DataProvider\ValidusMusic.DataProvider.csproj" />
   </ItemGroup>
 
 </Project>
