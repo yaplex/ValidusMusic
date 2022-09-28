@@ -1,12 +1,9 @@
 ﻿using AutoMapper;
-using FluentResults;
 using MediatR;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
-using ValidusMusic.Core.Domain;
 using ValidusMusic.Core.Domain.Artists.Commands;
+using ValidusMusic.Core.Domain.Artists.Queries;
 using ValidusMusic.Core.Domain.Queries;
-using ValidusMusic.Core.Domain.Repository;
 using ValidusMusic.Core.ExternalContracts.DataTransfer.Artist;
 
 namespace ValidusMusic.Api.Controllers
