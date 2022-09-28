@@ -15,7 +15,7 @@ public class ArtistRepository: IArtistRepository
     }
     public async Task<Result<IEnumerable<Artist>>> GetAll()
     {
-        var artists = await _dbContext.Artists.ToListAsync();
+        var artists = await _dbContext.Artists.Include(x=>x.ArtistsAlbums).ThenInclude(x=>x.Album).ToListAsync();
         return artists;
     }
 }

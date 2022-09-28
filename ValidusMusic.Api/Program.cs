@@ -21,6 +21,10 @@ builder.Services.AddDbContext<ValidusMusicDbContext>(options =>
     //     {
     //         ctx.Database.EnsureCreatedAsync();
     //     }
+    //     using (var ctx = new ValidusMusicDbContext(options.Options))
+    //     {
+    //         ctx.Database.EnsureCreatedAsync();
+    //     }
     // }
     // else
     // {
@@ -28,6 +32,8 @@ builder.Services.AddDbContext<ValidusMusicDbContext>(options =>
 
     options.UseSqlServer(builder.Configuration.GetConnectionString("ValidusMusicConnection"),
         b => b.MigrationsAssembly("ValidusMusic.DataProvider"));
+
+
 
 });
 

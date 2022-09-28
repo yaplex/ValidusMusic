@@ -7,5 +7,7 @@
         public DateTime LastModified { get; set; }
 
         public string Name { get; set; }
+
+        public List<string> Albums { get; set; }
     }
 }

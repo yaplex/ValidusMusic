@@ -53,11 +53,11 @@ namespace ValidusMusic.Api.Controllers
         }
         public async Task<Result<IEnumerable<Artist>>> Handle(GetAllArtistsQuery request, CancellationToken cancellationToken)
         {
-            var allLeads = await _repository.GetAll();
-            if (allLeads.IsSuccess)
-                return Result.Ok(allLeads.Value);
+            var allArtists = await _repository.GetAll();
+            if (allArtists.IsSuccess)
+                return Result.Ok(allArtists.Value);
 
-            return allLeads;
+            return allArtists;
         }
     }
 
@@ -65,7 +65,8 @@ namespace ValidusMusic.Api.Controllers
     {
         public ArtistProfile()
         {
-            CreateMap<Artist, ArtistDto>();
+            CreateMap<Artist, ArtistDto>()
+                .ForMember(d=>d.Albums, o=>o.MapFrom(s=>s.ArtistsAlbums.Select(x=>x.Album.Name)));
         }
     }
 }

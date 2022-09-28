@@ -13,15 +13,15 @@ public class ValidusMusicDbContext: DbContext
     protected override void OnModelCreating(ModelBuilder modelBuilder)
     {
         modelBuilder.Entity<ArtistAlbum>().HasKey(aa => new { aa.AlbumId, aa.ArtistId });
-        // modelBuilder.Entity<ArtistAlbum>()
-        //     .HasOne<Artist>(aa=>aa.Artist)
-        //     .WithMany(a=>a.ArtistsAlbums)
-        //     .HasForeignKey(aa=>aa.ArtistId);
-        //
-        // modelBuilder.Entity<ArtistAlbum>()
-        //     .HasOne<Album>(aa=>aa.Album)
-        //     .WithMany(a=>a.ArtistsAlbums)
-        //     .HasForeignKey(aa=>aa.AlbumId);
+        modelBuilder.Entity<ArtistAlbum>()
+            .HasOne<Artist>(aa=>aa.Artist)
+            .WithMany(a=>a.ArtistsAlbums)
+            .HasForeignKey(aa=>aa.ArtistId);
+        
+        modelBuilder.Entity<ArtistAlbum>()
+            .HasOne<Album>(aa=>aa.Album)
+            .WithMany(a=>a.ArtistsAlbums)
+            .HasForeignKey(aa=>aa.AlbumId);
 
         base.OnModelCreating(modelBuilder);
     
