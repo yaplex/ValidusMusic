@@ -33,6 +33,22 @@ public class ValidusMusicDbContext: DbContext
         //     { Id = 3, Name = "Van Halen", Created = DateTime.Now, LastModified = DateTime.Now });
     }
 
+    public override Task<int> SaveChangesAsync(bool acceptAllChangesOnSuccess, CancellationToken cancellationToken = new CancellationToken())
+    {
+        var entries = ChangeTracker
+            .Entries()
+            .Where(e => e.Entity is MusicEntity && (
+                e.State == EntityState.Added
+                || e.State == EntityState.Modified));
+
+        foreach (var entityEntry in entries)
+        {
+            ((MusicEntity)entityEntry.Entity).LastModified = DateTime.Now;
+        }
+
+        return base.SaveChangesAsync(acceptAllChangesOnSuccess, cancellationToken);
+    }
+
     public override int SaveChanges()
     {
         var entries = ChangeTracker

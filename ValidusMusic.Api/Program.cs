@@ -1,8 +1,10 @@
 using System.Reflection;
 using MediatR;
 using Microsoft.EntityFrameworkCore;
+using ValidusMusic.Api.Controllers;
 using ValidusMusic.Core.Domain;
 using ValidusMusic.Core.Domain.Repository;
+using ValidusMusic.Core.ExternalContracts.DataTransfer.Artist;
 using ValidusMusic.DataProvider;
 using ValidusMusic.DataProvider.Repository;
 
@@ -42,8 +44,17 @@ builder.Services.AddDbContext<ValidusMusicDbContext>(options =>
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
-builder.Services.AddMediatR(Assembly.GetExecutingAssembly());
-builder.Services.AddAutoMapper(Assembly.GetExecutingAssembly());
+var assembliesToScan = new List<Assembly>
+{
+    typeof(ArtistController).Assembly,
+    typeof(ArtistRepository).Assembly,
+    typeof(ArtistDto).Assembly,
+    typeof(Artist).Assembly,
+}.ToArray();
+
+
+builder.Services.AddMediatR(assembliesToScan);
+builder.Services.AddAutoMapper(assembliesToScan);
 
 builder.Services.AddScoped<IArtistRepository, ArtistRepository>();
 

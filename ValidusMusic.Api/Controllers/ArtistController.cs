@@ -4,8 +4,10 @@ using MediatR;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using ValidusMusic.Core.Domain;
+using ValidusMusic.Core.Domain.Artists.Commands;
+using ValidusMusic.Core.Domain.Queries;
 using ValidusMusic.Core.Domain.Repository;
-using ValidusMusic.Core.ExternalContracts.DataTransfer;
+using ValidusMusic.Core.ExternalContracts.DataTransfer.Artist;
 
 namespace ValidusMusic.Api.Controllers
 {
@@ -37,36 +39,70 @@ namespace ValidusMusic.Api.Controllers
 
             return NotFound();
         }
-    }
 
-    public class GetAllArtistsQuery: IRequest<Result<IEnumerable<Artist>>>
-    {
-    }
-
-    public class GetAllArtistsQueryHandler : IRequestHandler<GetAllArtistsQuery, Result<IEnumerable<Artist>>>
-    {
-        private readonly IArtistRepository _repository;
-
-        public GetAllArtistsQueryHandler(IArtistRepository repository)
+        [HttpGet]
+        [Route("{id}")]
+        public async Task<ActionResult<IEnumerable<ArtistDto>>> Get(long id)
         {
-            _repository = repository;
-        }
-        public async Task<Result<IEnumerable<Artist>>> Handle(GetAllArtistsQuery request, CancellationToken cancellationToken)
-        {
-            var allArtists = await _repository.GetAll();
-            if (allArtists.IsSuccess)
-                return Result.Ok(allArtists.Value);
+            _logger.LogInformation($"Get Artists with ID: {id}");
 
-            return allArtists;
+            var artist = await _mediator.Send(new GetArtistQuery(id));
+            if (artist.IsSuccess)
+            {
+                return Ok(_mapper.Map<ArtistDto>(artist.Value));
+            }
+
+            return NotFound();
+        }
+
+        [HttpPost]
+        public async Task<ActionResult> Post(CreateArtistDto artist)
+        {
+            _logger.LogInformation("Creating new Artists");
+
+            var createdArtist = await _mediator.Send(new CreateNewArtistCommand(artist.Name));
+            if (createdArtist.IsSuccess)
+                return CreatedAtAction("Get", new { Id = createdArtist.Value.Id },
+                    _mapper.Map<ArtistDto>(createdArtist.Value));
+            return BadRequest(createdArtist.Reasons);
+        }
+
+        [HttpPut]
+        [Route("{id}")]
+        public async Task<ActionResult> Put(long id, UpdateArtistDto updateDto)
+        {
+            _logger.LogInformation($"Updating Artists with id: {id}");
+
+            var artist = await _mediator.Send(new GetArtistQuery(id));
+            if (artist.IsSuccess)
+            {
+                var updateResult = await _mediator.Send(new UpdateArtistCommand(updateDto, artist.Value));
+                if (updateResult.IsSuccess)
+                    return Ok();
+                return BadRequest(updateResult.Reasons);
+            }
+
+            return NotFound(id);
+        }
+
+        [HttpDelete]
+        [Route("{id}")]
+        public async Task<ActionResult> Delete(long id)
+        {
+            _logger.LogInformation($"Deleting Artist: {id}");
+
+            var artist = await _mediator.Send(new GetArtistQuery(id));
+            if (artist.IsSuccess)
+            {
+                var deleteResult = await _mediator.Send(new DeleteArtistCommand(artist.Value));
+                if(deleteResult.IsSuccess)
+                    return Ok(id);
+                return BadRequest(deleteResult.Reasons);
+
+            }
+            return NotFound(id);
         }
     }
 
-    public class ArtistProfile : Profile
-    {
-        public ArtistProfile()
-        {
-            CreateMap<Artist, ArtistDto>()
-                .ForMember(d=>d.Albums, o=>o.MapFrom(s=>s.ArtistsAlbums.Select(x=>x.Album.Name)));
-        }
-    }
+   
 }

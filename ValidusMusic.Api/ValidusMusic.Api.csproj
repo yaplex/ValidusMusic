@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk.Web">
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
 
   <PropertyGroup>
     <TargetFramework>net6.0</TargetFramework>
@@ -25,6 +25,10 @@
   <ItemGroup>
     <ProjectReference Include="..\ValidusMusic.Core.ExternalContracts\ValidusMusic.Core.ExternalContracts.csproj" />
     <ProjectReference Include="..\ValidusMusic.DataProvider\ValidusMusic.DataProvider.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="AutoMapperProfiles\" />
   </ItemGroup>
 
 </Project>

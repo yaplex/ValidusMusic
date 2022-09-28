@@ -1,4 +1,4 @@
-﻿namespace ValidusMusic.Core.ExternalContracts.DataTransfer
+﻿namespace ValidusMusic.Core.ExternalContracts.DataTransfer.Artist
 {
     public class ArtistDto
     {
