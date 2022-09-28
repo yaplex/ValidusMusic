@@ -5,7 +5,6 @@ using Microsoft.AspNetCore.Mvc;
 using ValidusMusic.Core.Domain.Albums.Commands;
 using ValidusMusic.Core.Domain.Albums.Queries;
 using ValidusMusic.Core.Domain.Artists.Commands;
-using ValidusMusic.Core.Domain.Queries;
 using ValidusMusic.Core.ExternalContracts.DataTransfer;
 using ValidusMusic.Core.ExternalContracts.DataTransfer.Album;
 using ValidusMusic.Core.ExternalContracts.DataTransfer.Artist;

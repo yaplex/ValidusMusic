@@ -3,7 +3,6 @@ using MediatR;
 using Microsoft.AspNetCore.Mvc;
 using ValidusMusic.Core.Domain.Artists.Commands;
 using ValidusMusic.Core.Domain.Artists.Queries;
-using ValidusMusic.Core.Domain.Queries;
 using ValidusMusic.Core.ExternalContracts.DataTransfer.Artist;
 
 namespace ValidusMusic.Api.Controllers

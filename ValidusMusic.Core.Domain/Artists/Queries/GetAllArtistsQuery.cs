@@ -2,7 +2,7 @@
 using MediatR;
 using ValidusMusic.Core.Domain.Repository;
 
-namespace ValidusMusic.Core.Domain.Queries;
+namespace ValidusMusic.Core.Domain.Artists.Queries;
 
 public class GetAllArtistsQuery : IRequest<Result<IEnumerable<Artist>>>
 {

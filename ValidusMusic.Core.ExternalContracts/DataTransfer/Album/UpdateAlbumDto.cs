@@ -10,4 +10,6 @@ public class UpdateAlbumDto
     [Required]
     [Range(1900, 2030, ErrorMessage = "The release year should be between 1900 and 2030")]
     public int YearReleased { get; set; }
+
+    public long ArtistId { get; set; }
 }
